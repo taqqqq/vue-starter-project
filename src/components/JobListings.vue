@@ -48,7 +48,7 @@
     <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
       <RouterLink
         to="/jobs"
-        class="block bg-white text-white text-center text-black py-4 px-6 rounded-xl hover:bg-gray-700"
+        class="block bg-white text-gray-500 text-center text-black py-4 px-6 rounded-xl hover:bg-gray-700"
         >View All Jobs</RouterLink
       >
     </section>
