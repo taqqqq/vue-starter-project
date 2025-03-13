@@ -50,7 +50,7 @@
               class="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
             >
               <div class="text-gray-500 mb-4">{{state.job.type}}</div>
-              <h1 class="text-3xl font-bold mb-4">{{state.job.title}}</h1>
+              <h1 class="text-3xl text-gray-600 font-bold mb-4">{{state.job.title}}</h1>
               <div
                 class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
               >
@@ -66,20 +66,20 @@
                 Job Description
               </h3>
 
-              <p class="mb-4">
+              <p class="mb-4 text-gray-700">
                 {{state.job.description}}
               </p>
 
               <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
 
-              <p class="mb-4">{{state.job.salary}} / Year</p>
+              <p class="mb-4 text-gray-600">{{state.job.salary}} / Year</p>
             </div>
           </main>
 
           <!-- Sidebar -->
           <aside>
             <!-- Company Info -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
               <h3 class="text-xl font-bold mb-6">Company Info</h3>
 
               <h2 class="text-2xl">{{state.job.company.name}}</h2>

@@ -6,6 +6,6 @@
 
 <template>
     <Hero />
-    <HomeCards/>
+    <HomeCards class="text-gray-600"/>
     <JobListings :limit="3" :showButton="true"/>
 </template>
