@@ -7,13 +7,27 @@
     import { RouterLink } from 'vue-router';
     import Button from 'primevue/button';
     import InputText from 'primevue/inputtext';
+    import { onBeforeUnmount } from 'vue';
 
     const jobs = ref([]);
     const filters = ref({
         global: {
-            value: null,
+            value: localStorage.getItem('tableFilter') || '',
             matchMode: 'contains'
         }
+    });
+    
+    // Add these refs for state management
+    const currentPage = ref(parseInt(localStorage.getItem('tablePage')) || 0);
+    const currentRows = ref(parseInt(localStorage.getItem('tableRows')) || 1);
+
+    // Save state before component unmounts
+    onBeforeUnmount(() => {
+        if(filters.value.global.value != 'null') {
+            localStorage.setItem('tableFilter', filters.value.global.value);
+        }
+        localStorage.setItem('tablePage', currentPage.value.toString());
+        localStorage.setItem('tableRows', currentRows.value.toString());
     });
 
     onMounted(async() => {
@@ -28,11 +42,17 @@
 
 <template>
     <!-- <JobListings/> -->
-    <DataTable v-model:filters="filters" showGridlines 
-            filter-display="menu" :value="jobs" paginator 
-            :rows="1" :rows-per-page-options="[1,2,3,5,10]"
-            :global-filter-fields="['type', 'type', 'location', 'salary', 'company.name']"
-            class="text-xl">
+    <DataTable 
+        v-model:filters="filters" 
+        v-model:first="currentPage"
+        v-model:rows="currentRows"
+        showGridlines 
+        filter-display="menu" 
+        :value="jobs" 
+        paginator 
+        :rows-per-page-options="[1,2,3,5,10]"
+        :global-filter-fields="['type', 'type', 'location', 'salary', 'company.name']"
+        class="text-xl">
         <template #header>
             <div class="flex justify-between">
                 <span></span>
