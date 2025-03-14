@@ -2,10 +2,13 @@
     import {reactive} from 'vue'
     import axios from 'axios';
     import router from '@/router';
-    import {useToast} from 'vue-toastification'
+    import {useToast} from 'primevue/usetoast';
+    import Toast from 'primevue/toast';
     import Dropdown from 'primevue/dropdown'
     import InputText from 'primevue/inputtext';
     import Textarea from 'primevue/textarea';
+
+    const toast = useToast();
 
     const form = reactive({
         type: 'Full-Time',
@@ -20,8 +23,6 @@
             contactPhone: ''
         }
     });
-
-    const toast = useToast();
 
     const submitJob = async() => {
         const newJob = {
@@ -40,16 +41,27 @@
         
         try {
             const response = await axios.post(`/api/jobs/`, newJob);
-            toast.success('Job added successfully');
+            toast.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Job added successfully',
+              life: 3000
+            });
             router.push(`/jobs/${response.data.id}`);
         } catch (error) {
-            toast.error('Error adding the job');
+            toast.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to add job',
+              life: 3000
+            });
             console.error("Error fetching job data " + error);
         }
     };
 </script>
 
 <template>
+    <Toast />
     <section class="bg-gray-400">
       <div class="container m-auto max-w-2xl py-24">
         <div

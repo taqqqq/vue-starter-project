@@ -1,11 +1,15 @@
 <script setup>
     import {RouterLink, useRoute} from 'vue-router';
     import logo from '@/assets/img/logo.png';
+    import Button from 'primevue/button'
+    import { themeChangeState } from './themeChangeState';
 
     const isActiveLink = (routePath) => {
       const route = useRoute();
       return route.path == routePath;
     }
+
+    const {isDarkTheme, toggleTheme} = themeChangeState();
 </script>
 
 <template>
@@ -26,16 +30,17 @@
               <div class="flex space-x-2">
                 <RouterLink
                   to="/"
-                  :class="[isActiveLink('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-3', 'py-2', 'rounded-md']"
-                  >Home</RouterLink>
+                  :class="[isActiveLink('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-1', 'py-1', 'rounded-md']"
+                  ><Button label="Home"/></RouterLink>
                 <RouterLink
                   to="/jobs"
-                  :class="[isActiveLink('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-3', 'py-2', 'rounded-md']"
-                  >Jobs</RouterLink>
+                  :class="[isActiveLink('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-1', 'py-1', 'rounded-md']"
+                  ><Button label="Jobs"/></RouterLink>
                 <RouterLink
                   to="/jobs/add"
-                  :class="[isActiveLink('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-3', 'py-2', 'rounded-md']"
-                  >Add Job</RouterLink>
+                  :class="[isActiveLink('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white', 'text-white', 'px-1', 'py-1', 'rounded-md']"
+                  ><Button label="Add Job"/></RouterLink>
+                <Button :icon="isDarkTheme ? 'pi pi-sun' : 'pi pi-moon'" @click="toggleTheme"/>
               </div>
             </div>
           </div>

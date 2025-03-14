@@ -3,7 +3,12 @@
   import { useRoute, RouterLink, useRouter } from 'vue-router';
   import axios from 'axios';
   import BackButton from '@/components/BackButton.vue';
-  import { useToast } from 'vue-toastification';
+  import { useToast } from 'primevue/usetoast';
+  import Toast from 'primevue/toast'
+  import DataTable from 'primevue/datatable';
+  import Column from 'primevue/column';
+  import ColumnGroup from 'primevue/columngroup';
+  import Row from 'primevue/row';
 
   const route = useRoute();
   const router = useRouter();
@@ -21,10 +26,20 @@
     if (confirm) {
       try {
         await axios.delete(`/api/jobs/${jobID}`);
-        toast.success('Job deleted successfully.');
+        toast.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Job deleted successfully.',
+          life: 3000
+        });
         router.push('/jobs');
       } catch (error) {
-        toast.error('Error deleting the job.');
+        toast.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Job was not deleted.',
+          life: 3000
+        });
       }
     }
   }
@@ -42,6 +57,7 @@
 </script>
 
 <template>
+    <Toast />
     <section v-if="!state.isLoading" class="bg-green-50">
       <div class="container m-auto py-10 px-6">
         <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
@@ -73,6 +89,8 @@
               <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
 
               <p class="mb-4 text-gray-600">{{state.job.salary}} / Year</p>
+            
+              
             </div>
           </main>
 
@@ -103,7 +121,7 @@
 
             <!-- Manage -->
             <div class="bg-white p-6 rounded-lg shadow-md mt-6">
-              <h3 class="text-xl font-bold mb-6">Manage Job</h3>
+              <h3 class="text-xl text-stone-700 font-bold mb-6">Manage Job</h3>
               <RouterLink
                 :to="`/jobs/edit/${state.job.id}`"
                 class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"

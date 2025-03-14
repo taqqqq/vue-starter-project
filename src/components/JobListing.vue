@@ -2,6 +2,9 @@
 
     import {defineProps, ref, computed} from 'vue'
     import {RouterLink} from 'vue-router'
+    import { themeChangeState } from './themeChangeState';
+
+    const {isDarkTheme} = themeChangeState();
 
     const props = defineProps({
         job: Object
@@ -23,7 +26,7 @@
 </script>
 
 <template>
-    <div class="bg-white rounded-xl shadow-md relative">
+    <div :class="['rounded-xl shadow-md relative', isDarkTheme ? 'bg-gray-200' : 'bg-white']">
             <div class="p-4">
               <div class="mb-6">
                 <div class="text-gray-600 my-2">{{ job.type }}</div>

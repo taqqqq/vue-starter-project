@@ -1,25 +1,25 @@
 {
   "jobs": [
     {
-      "id": "1",
+      "type": "Remote",
       "title": "Senior Vue Developer",
-      "type": "Full-Time",
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as Vue or Angular.",
+      "salary": "$70 - $80K",
       "location": "Boston, MA",
-      "salary": "$70K - $80K",
       "company": {
         "name": "NewTek Solutions",
         "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
         "contactEmail": "contact@teksolutions.com",
         "contactPhone": "555-555-5555"
-      }
+      },
+      "id": "1"
     },
     {
-      "type": "Part-Time",
-      "title": "Front-End Engineer (Vue)",
+      "type": "Internship",
+      "title": "Front-End Engineer (React JS)",
       "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
-      "salary": "$70K - $80K",
-      "location": "Miami, FL",
+      "salary": "$70 - $80K",
+      "location": "NewYork",
       "company": {
         "name": "Veneer Solutions",
         "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
@@ -32,7 +32,7 @@
       "type": "Part-Time",
       "title": "Vue Front-End Developer",
       "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
-      "salary": "$80K - $90K",
+      "salary": "$70 - $80K",
       "location": "Pheonix, AZ",
       "company": {
         "name": "Alpha Elite",
@@ -43,18 +43,18 @@
       "id": "4"
     },
     {
-      "id": "5",
-      "title": "Full Stack Vue Developer",
       "type": "Full-Time",
+      "title": "Full Stack Developer (Vue)",
       "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
+      "salary": "$60 - $70K",
       "location": "Atlanta, GA",
-      "salary": "$90K - $100K",
       "company": {
         "name": "Browning Technologies",
         "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
         "contactEmail": "contact@consecteturadipisicing.com",
         "contactPhone": "555-555-5555"
-      }
+      },
+      "id": "5"
     },
     {
       "type": "Full-Time",
@@ -69,6 +69,20 @@
         "contactPhone": "16646"
       },
       "id": "6"
+    },
+    {
+      "id": "7f26",
+      "type": "Full-Time",
+      "title": "Random",
+      "description": "Test",
+      "salary": "$150 - $175K",
+      "location": "Random",
+      "company": {
+        "name": "ss",
+        "description": "dd",
+        "contactEmail": "aa@aa",
+        "contactPhone": "333"
+      }
     }
   ]
 }

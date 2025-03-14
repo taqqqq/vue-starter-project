@@ -3,6 +3,8 @@
     import {reactive, defineProps, onMounted} from 'vue';
     import {RouterLink} from 'vue-router'
     import axios from 'axios'
+    import { themeChangeState } from './themeChangeState';
+    import Button from 'primevue/button';
 
     defineProps({
         limit: Number,
@@ -11,6 +13,8 @@
             default: false,
         }
     });
+
+    const {isDarkTheme} = themeChangeState();
 
     const state = reactive({
         jobs: [],
@@ -40,17 +44,17 @@
                 Browse Jobs
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job"/>
+                <!-- <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job"/> -->
             </div>
         </div>
     </section>
 
     <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
-      <RouterLink
-        to="/jobs"
-        class="block bg-white text-gray-500 text-center text-black py-4 px-6 rounded-xl hover:bg-gray-700"
-        >View All Jobs</RouterLink
-      >
+      <div class="flex justify-center items-center">
+        <RouterLink to="/jobs">
+            <Button label="View All Jobs" class="text-xl p-3 w-96"/> 
+        </RouterLink>
+      </div>
     </section>
 
     

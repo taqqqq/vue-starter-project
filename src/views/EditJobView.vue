@@ -2,7 +2,6 @@
     import {reactive, onMounted} from 'vue'
     import axios from 'axios';
     import router from '@/router';
-    import {useToast} from 'vue-toastification'
     import {useRoute} from 'vue-router'
     import Dropdown from 'primevue/dropdown'
     import InputText from 'primevue/inputtext';
@@ -31,8 +30,6 @@
         isLoading: true
     });
 
-    const toast = useToast();
-
     const submitJob = async() => {
         const updatedJob = {
             type: form.type,
@@ -50,10 +47,8 @@
         
         try {
             const response = await axios.put(`/api/jobs/${jobID}`, updatedJob);
-            toast.success('Job listing changed successfully');
             router.push(`/jobs/${response.data.id}`);
         } catch (error) {
-            toast.error('Error updating the job');
             console.error("Error updating job data " + error);
         }
     };
