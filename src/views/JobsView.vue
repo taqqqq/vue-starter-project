@@ -46,7 +46,7 @@
         v-model:filters="filters" 
         v-model:first="currentPage"
         v-model:rows="currentRows"
-        showGridlines 
+        showGridlines
         filter-display="menu" 
         :value="jobs" 
         paginator 

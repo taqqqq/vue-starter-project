@@ -32,10 +32,10 @@
       "type": "Part-Time",
       "title": "Vue Front-End Developer",
       "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
-      "salary": "$70 - $80K",
+      "salary": "$175 - $200K",
       "location": "Pheonix, AZ",
       "company": {
-        "name": "Alpha Elite",
+        "name": "Alpha Elite v2",
         "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
         "contactEmail": "contact@adipisicingelit.com",
         "contactPhone": "555-555-5555"
@@ -82,6 +82,48 @@
         "description": "dd",
         "contactEmail": "aa@aa",
         "contactPhone": "333"
+      }
+    },
+    {
+      "id": "519d",
+      "type": "Full-Time",
+      "title": "aa",
+      "description": "aa",
+      "salary": "Under $50K",
+      "location": "aa",
+      "company": {
+        "name": "aa",
+        "description": "aa",
+        "contactEmail": "aa@aa",
+        "contactPhone": "111"
+      }
+    },
+    {
+      "id": "c8dd",
+      "type": "Full-Time",
+      "title": "aa",
+      "description": "aa",
+      "salary": "Under $50K",
+      "location": "aa",
+      "company": {
+        "name": "aa",
+        "description": "aa",
+        "contactEmail": "aa@aa",
+        "contactPhone": "11"
+      }
+    },
+    {
+      "id": "0796",
+      "type": "Internship",
+      "title": "SMTH",
+      "description": "aaa",
+      "salary": "$60 - $70K",
+      "location": "zz",
+      "company": {
+        "name": "slkdjlkad",
+        "description": "ksksk",
+        "contactEmail": "ss@gmam",
+        "contactPhone": "1931"
       }
     }
   ]

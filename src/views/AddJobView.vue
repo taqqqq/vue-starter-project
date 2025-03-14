@@ -40,13 +40,14 @@
         };
         
         try {
-            const response = await axios.post(`/api/jobs/`, newJob);
-            toast.add({
+          toast.add({
               severity: 'success',
               summary: 'Success',
               detail: 'Job added successfully',
               life: 3000
             });
+            const response = await axios.post(`/api/jobs/`, newJob);
+   
             router.push(`/jobs/${response.data.id}`);
         } catch (error) {
             toast.add({
