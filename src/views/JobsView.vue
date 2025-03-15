@@ -52,7 +52,7 @@ onMounted(async () => {
         :rows-per-page-options="[1, 2, 3, 5, 10]"
         :global-filter-fields="[
             'type',
-            'type',
+            'title',
             'location',
             'salary',
             'company.name',
